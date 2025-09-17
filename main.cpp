@@ -62,27 +62,27 @@ int main()
 		
 		switch(userInput)
 		{
-			case '1':
+			case '1': // Sort Through Bubble Sort Algorithm
 				sortAscended = determineSortOrder();
 				
-				bubbleSort(numberList, sortAscended, arraySize);
-				if(loggedSession) {sortLogger(Logs,sortAscended,numberList,arraySize); }
+				bubbleSort(numberList, sortAscended, arraySize); // Start the Sorting Algorithm
+				if(loggedSession) {sortLogger(Logs,sortAscended,numberList,arraySize); } // Create Logs if Permitted
 				
 				viewNumbers(numberList,arraySize);
 				break;
-			case '2':
+			case '2': // Sort Through Merge Sort Algorithm
 				sortAscended = determineSortOrder();
 				sortAscended == true ? std::cout << "--SORTING THROUGH ASCENDED--\n" : std::cout << "--SORTING THROUGH DESCENDED--\n"; // if sortAscended == true, then we'll output we're ascending it; vice versa.
 
-				mergeSort(numberList, sortAscended, 0, arraySize - 1);
-				if(loggedSession) {sortLogger(Logs,sortAscended,numberList,arraySize); }
+				mergeSort(numberList, sortAscended, 0, arraySize - 1); // Start the Sorting Algorithm
+				if(loggedSession) {sortLogger(Logs,sortAscended,numberList,arraySize); } // Create Logs if Permitted
 				
 				viewNumbers(numberList, arraySize);
 				break;
-			case '3':
+			case '3': // View Numbers
 				viewNumbers(numberList,arraySize);
 				break;
-			case '4':
+			case '4': // Generate A New Number List
 				// Free Memory
 				delete[] numberList;
 				cout << "How much numbers would you like to generate? (10-999): ";
@@ -109,10 +109,10 @@ int main()
 				// View List Once Process is Complete
 				viewNumbers(numberList,arraySize);
 				break;
-			case '5':
+			case '5': // Exit Program
 				running = false;
 				break;
-			default:
+			default: // User did not input a valid value
 				cout << "Invalid input! Please input the following:\n";
 				break;
 		}
