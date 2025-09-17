@@ -18,8 +18,12 @@ Logger::Logger()
 	std::filesystem::create_directory("Logs"); // If the "Logs" folder does not exist yet, we'll create one.
 	cout << timeStamp;
 	
-	oss << local_tm.tm_year + 1900 << '-' << local_tm.tm_mon + 1 << '-' << local_tm.tm_mday; // +1900 and +1 is there to properly set the date to now.
-	fileName = oss.str(); // combine the values together.
+	// Make the File Name
+	fileName = to_string(local_tm.tm_year + 1900);
+	fileName += '-';
+	fileName += to_string(local_tm.tm_mon + 1);
+	fileName += '-';
+	fileName += to_string(local_tm.tm_mday);
 	fileName += ".txt";
 	
 	pathFile += fileName;

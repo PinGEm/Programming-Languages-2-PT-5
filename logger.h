@@ -2,7 +2,6 @@
 #define LOGGER_HELPER
 
 	#include <string> // used to create string variables
-	#include <sstream> // used for the oss type to put the time stamp inside a string
 	#include <chrono> // used to keep track of the time stamps
 	
 	// Declaring the class variables and functions to be used in logger.cpp
@@ -15,7 +14,6 @@
 			
 			// File Name
 			tm local_tm; // returns the local time stamp
-			std::ostringstream oss; // used for concatenating strings and integers.
 			std::string fileName; 
 			std::string pathFile;
 		public:
